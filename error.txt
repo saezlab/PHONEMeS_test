@@ -1,0 +1,31 @@
+
+── Column specification ────────────────────────────────────────────────────────
+cols(
+  ID = col_character(),
+  logFC = col_double(),
+  AveExpr = col_double(),
+  t = col_double(),
+  P.Value = col_double(),
+  adj.P.Val = col_double(),
+  B = col_double()
+)
+
+
+── Column specification ────────────────────────────────────────────────────────
+cols(
+  X1 = col_character(),
+  V1 = col_double()
+)
+
+Warning message:
+Missing column names filled in: 'X1' [1] 
+Input nodes: 41 
+Measurement nodes: 290 
+Network nodes: 1845 
+Network edges: 10340
+Writing constraints...
+Solving LP problem...
+Saving results...
+ 
+--- End of the CARNIVAL pipeline ---
+ 
