@@ -18,9 +18,9 @@ kinase_to_exclude <- CPTAC_Kinase_Activities_omnipath[
   abs(CPTAC_Kinase_Activities_omnipath$V1) < 0.5,"X1"]
 
 CPTAC_Kinase_Activities_omnipath <- CPTAC_Kinase_Activities_omnipath[
-  abs(CPTAC_Kinase_Activities_omnipath$V1) > 2,]
+  abs(CPTAC_Kinase_Activities_omnipath$V1) >= 1.3,] #2
 
-CPTAC_phospho_ttop <- CPTAC_phospho_ttop[1:300, c(1,4)]
+CPTAC_phospho_ttop <- CPTAC_phospho_ttop[1:650, c(1,4)] #300
 
 kinase_input <- as.numeric(CPTAC_Kinase_Activities_omnipath[,2])
 phospho_meas <- as.numeric(CPTAC_phospho_ttop[,2])
@@ -35,7 +35,7 @@ carniphal_res <- run_carniphal(inputObj = kinase_input,
                                pruning = T, 
                                n_steps_pruning = 10, 
                                solverPath = "~/Documents/cplex", ##Put whatever you need !!
-                               timelimit = 30)
+                               timelimit = 120)
 
 carniphal_res <- reattach_psites(carniphal_res)
 

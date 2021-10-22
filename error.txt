@@ -19,13 +19,37 @@ cols(
 
 Warning message:
 Missing column names filled in: 'X1' [1] 
-Input nodes: 41 
-Measurement nodes: 290 
-Network nodes: 1845 
-Network edges: 10340
+Input nodes: 73 
+Measurement nodes: 600 
+Network nodes: 2183 
+Network edges: 11250
 Writing constraints...
 Solving LP problem...
 Saving results...
  
 --- End of the CARNIVAL pipeline ---
  
+
+── Column specification ────────────────────────────────────────────────────────
+cols(
+  .default = col_character(),
+  GENE_ID = col_double(),
+  SITE_GRP_ID = col_double(),
+  LT_LIT = col_double(),
+  MS_LIT = col_double(),
+  MS_CST = col_double()
+)
+ℹ Use `spec()` for the full column specifications.
+
+Warning: 17266 parsing failures.
+row col   expected     actual               file
+  1  -- 21 columns 20 columns 'Regulatory_sites'
+  2  -- 21 columns 20 columns 'Regulatory_sites'
+  3  -- 21 columns 20 columns 'Regulatory_sites'
+  4  -- 21 columns 20 columns 'Regulatory_sites'
+  5  -- 21 columns 20 columns 'Regulatory_sites'
+... ... .......... .......... ..................
+See problems(...) for more details.
+
+Warning message:
+Missing column names filled in: 'X21' [21] 
