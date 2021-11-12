@@ -9,7 +9,7 @@ CPTAC_Kinase_Activities_omnipath <- as.data.frame(
 
 # data("phonemesPKN")
 
-# phonemesPKN <- carniphalPKN
+# phonemesPKN <- PHONEMeSPKN
 
 CPTAC_phospho_ttop <- CPTAC_phospho_ttop[
   CPTAC_phospho_ttop$ID %in% phonemesPKN$target,]
@@ -31,7 +31,7 @@ names(kinase_input) <- CPTAC_Kinase_Activities_omnipath$X1
 names(phospho_meas) <- CPTAC_phospho_ttop$ID
 kinase_input <- sign(kinase_input)
 
-carniphal_res <- run_phonemes(inputObj = kinase_input, 
+PHONEMeS_res <- run_phonemes(inputObj = kinase_input, 
                                measObj = phospho_meas, 
                                rmNodes = kinase_to_exclude, 
                                pruning = T, 
@@ -39,12 +39,12 @@ carniphal_res <- run_phonemes(inputObj = kinase_input,
                                solverPath = "~/Documents/cplex", ##Put whatever you need !!
                                timelimit = 120)
 
-View(carniphal_res$res$nodesAttributes)
+View(PHONEMeS_res$res$nodesAttributes)
 
-carniphal_res <- reattach_psites(carniphal_res)
+PHONEMeS_res <- reattach_psites(PHONEMeS_res)
 
-sif <- as.data.frame(carniphal_res$res$weightedSIF)
-att <- as.data.frame(carniphal_res$res$nodesAttributes)
+sif <- as.data.frame(PHONEMeS_res$res$weightedSIF)
+att <- as.data.frame(PHONEMeS_res$res$nodesAttributes)
 
 write_csv(sif, file = "sif.csv")
 write_csv(att, file = "att.csv")
